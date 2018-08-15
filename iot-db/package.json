@@ -1,0 +1,32 @@
+{
+  "name": "iot-db",
+  "version": "1.0.0",
+  "description": "db module for iotjs app",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrystalStream/iotjs.git"
+  },
+  "keywords": [
+    "node",
+    "iot",
+    "db",
+    "psql",
+    "redis",
+    "ava",
+    "sinon"
+  ],
+  "author": "Christofer Flores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrystalStream/iotjs/issues"
+  },
+  "homepage": "https://github.com/CrystalStream/iotjs#readme",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
