@@ -14,6 +14,10 @@ module.exports = async (config) => {
 
   await sequelize.authenticate()
 
+  if (config.setup) {
+    await sequelize.sync({ force: true }) // Wipe out all the database
+  }
+
   const Agent = {}
   const Metric = {}
 
