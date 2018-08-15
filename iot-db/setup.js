@@ -2,8 +2,25 @@
 
 const db = require('./')
 const debug = require('debug')('iotjs:iot-db:setup')
+const inquirer = require('inquirer')
+const chalk = require('chalk')
+
+const prompt = inquirer.createPromptModule()
 
 async function setup () {
+  const answer = await prompt([{
+    type: 'confirm',
+    name: 'setup',
+    message: 'This will destroy all the Database, are you sure to continue?',
+    default: false
+  }])
+
+  if (!answer.setup) {
+    return console.log(chalk.red('Setup script Canceled'))
+  }
+
+  console.log(chalk.blue('RUNNING SETUP FOR DATABASE'))
+
   const config = {
     database: process.env.DB || 'iot',
     username: process.env.DB_USER || 'crystalstream',
@@ -21,7 +38,7 @@ async function setup () {
 }
 
 function handleError (error) {
-  console.error(error.message)
+  console.error(`${chalk.red('[FATAL ERROR]')} ${error.message}`)
   console.error(error.stack)
   process.exit(1)
 }
