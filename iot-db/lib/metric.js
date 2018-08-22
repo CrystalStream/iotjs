@@ -1,9 +1,9 @@
 'use strict'
 
 module.exports = (MetricModel, AgentModel) => {
-  async function create (uuid, metric) {
+  async function create (agentUuid, metric) {
     const agent = AgentModel.findOne({
-      where: { uuid }
+      where: { agentUuid }
     })
 
     if (agent) {

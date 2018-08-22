@@ -2,7 +2,7 @@
 
 const agent = {
   id: 1,
-  uuid: 'ddff-eqer-er-werqwerr',
+  uuid: '4218cdb0-a5b5-11e8-98d0-529269fb1459',
   name: 'fixture',
   username: 'test',
   hotsname: 'host-test',
@@ -14,9 +14,9 @@ const agent = {
 
 const agents = [
   agent,
-  extend(agent, { id: 2, name: 'Mega Test', uuid: 'yyysaf-sdfbd-dfb-dfger', connected: false, username: 'supertest' }),
-  extend(agent, { id: 3, uuid: 'sdffferg-erge-erg-eeee', username: 'testing1' }),
-  extend(agent, { id: 4, uuid: 'flofpef-werwer-werrf-gvevk', username: 'testing2' })
+  extend(agent, { id: 2, name: 'Mega Test', uuid: '46101d88-a5b5-11e8-98d0-529269fb1459', connected: false, username: 'supertest' }),
+  extend(agent, { id: 3, uuid: '4cc9f4c8-a5b5-11e8-98d0-529269fb1459', username: 'testing1' }),
+  extend(agent, { id: 4, uuid: '50ab73e6-a5b5-11e8-98d0-529269fb1459', username: 'testing2' })
 ]
 
 function extend (data, values) {

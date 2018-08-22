@@ -30,7 +30,7 @@ let usernameArgs = {
 }
 
 let newAgent = {
-  uuid: '1ffwe2-23gfge-ger34-ger2313',
+  uuid: '593389fe-a5b5-11e8-98d0-529269fb1459',
   name: 'newAgent',
   username: 'newAgent',
   hotsname: 'Host-test-agent-new',
