@@ -1,0 +1,26 @@
+{
+  "name": "iot-mqtt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Simplet Iot Platform - MQTT Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "start": "NODE_ENV=production node server.js",
+    "start-dev": "DEBUG=iotjs:* nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.4",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "debug": "^4.1.0",
+    "iot-db": "file:../iot-db",
+    "mosca": "^2.8.3",
+    "redis": "^2.8.0"
+  }
+}
