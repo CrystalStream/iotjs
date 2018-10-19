@@ -2,11 +2,12 @@
 
 module.exports = (MetricModel, AgentModel) => {
   async function create (agentUuid, metric) {
-    const agent = AgentModel.findOne({
-      where: { agentUuid }
+    const agent = await AgentModel.findOne({
+      where: { uuid:  agentUuid }
     })
 
     if (agent) {
+      console.log('TCL: create -> agent', agent);
       Object.assign(metric, { agentId: agent.id })
       const result = await MetricModel.create(metric)
       return result.toJSON()
