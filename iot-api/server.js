@@ -35,11 +35,16 @@ function handleFatalError (err) {
   process.exit(1)
 }
 
-// Handle Exception
-process.on('uncaughtException', handleFatalError)
-process.on('unhandledRejection', handleFatalError)
+if (!module.parent) { // launch the server only if is not require('./server.js')
+
+  // Handle Exception
+  process.on('uncaughtException', handleFatalError)
+  process.on('unhandledRejection', handleFatalError)
 
 
-server.listen(port, () => {
-  console.log(`${chalk.green('Server up and runnig')}`)
-})
+  server.listen(port, () => {
+    console.log(`${chalk.green('Server up and runnig')}`)
+  })
+}
+
+module.exports = server
