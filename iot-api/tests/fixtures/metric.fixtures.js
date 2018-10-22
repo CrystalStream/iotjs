@@ -26,5 +26,5 @@ function extend (data, values) {
 
 module.exports = {
   single: metric,
-  byAgentUuid: uuid => metrics.filter( m => m.agentId === agentFixtures.byUuid(uuid))
+  byAgentUuid: uuid => metrics.filter(m => m.agentId === agentFixtures.byUuid(uuid))
 }

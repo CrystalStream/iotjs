@@ -56,12 +56,11 @@ test.serial.cb('/api/agents', t => {
 
 // TODO
 
-test.serial('/api/agent/:uuid')
-test.serial('/api/agent/:uuid - not found')
+test.serial.todo('/api/agent/:uuid')
+test.serial.todo('/api/agent/:uuid - not found')
 
-test.serial('/api/metric/:uuid')
-test.serial('/api/metric/:uuid - not found')
+test.serial.todo('/api/metric/:uuid')
+test.serial.todo('/api/metric/:uuid - not found')
 
-test.serial('/api/metric/:uuid/:type')
-test.serial('/api/metric/:uuid/:type - not found')
-
+test.serial.todo('/api/metric/:uuid/:type')
+test.serial.todo('/api/metric/:uuid/:type - not found')
