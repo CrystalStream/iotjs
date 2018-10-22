@@ -32,7 +32,7 @@ api.get('/agents', async (req, res, next) => {
   let agents = []
 
   try {
-    agents = await Agent.findAll()
+    agents = await Agent.findConnected()
   } catch (error) {
     return next(error)
   }
