@@ -1,7 +1,7 @@
 const IotAgent = require('../')
 
 const agent = new IotAgent({
-  name: 'myapp',
+  name: 'cpu usage',
   username: 'admin',
   interval: 2000
 })

@@ -2,13 +2,14 @@
 
 const http = require('http')
 const express = require('express')
+const asyncify = require('express-asyncify')
 const chalk = require('chalk')
 const debug = require('debug')('iot:api:server')
 
 const api = require('./api')
 
 const port = process.env.PORT || 3000
-const app = express()
+const app = asyncify(express())
 const server = http.createServer(app)
 
 app.use('/api', api)
@@ -20,14 +21,9 @@ app.use((err, req, res, next) => {
   if (err.message.match(/not found/)) {
     return res.status(404).send({ error: err.message })
   }
-  
+
   res.status(500).send({ error: err.message })
 })
-
-function handleError (err) {
-  console.error(`${chalk.red('[Fatal Error]')}: ${err.message}`)
-  console.error(err.stack)
-}
 
 function handleFatalError (err) {
   console.error(`${chalk.red('[Fatal Error]')}: ${err.message}`)
@@ -36,11 +32,9 @@ function handleFatalError (err) {
 }
 
 if (!module.parent) { // launch the server only if is not require('./server.js')
-
   // Handle Exception
   process.on('uncaughtException', handleFatalError)
   process.on('unhandledRejection', handleFatalError)
-
 
   server.listen(port, () => {
     console.log(`${chalk.green('Server up and runnig')}`)
